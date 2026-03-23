@@ -1,0 +1,33 @@
+[
+  {
+    "__comment": "--- Render Pass ---",
+    "__detail": "Switch branchy leaves to the Transparent render pass so the engine reads pixel alpha. Without this the game renders the block as Opaque and a transparent pixel becomes a black box.",
+    "op": "add",
+    "file": "game:blocktypes/wood/leaves",
+    "path": "/byType/*-branchy/renderpass",
+    "value": "Transparent",
+    "allowMissingPath": true
+  },
+  {
+    "__comment": "--- Face Culling ---",
+    "__detail": "Disable face-culling so that when the foliage texture becomes fully transparent the branch mesh of adjacent blocks is NOT hidden by the engine's performance optimisation that skips faces shared between two solid blocks.",
+    "op": "add",
+    "file": "game:blocktypes/wood/leaves",
+    "path": "/byType/*-branchy/faceCull",
+    "value": "Never",
+    "allowMissingPath": true
+  },
+  {
+    "__comment": "--- Seasonal Foliage Texture ---",
+    "__detail": "Map the 'foliage' texture slot to a fully transparent 1×1 PNG only during Winter. The 'wood' (bark/branch) slot is intentionally left untouched so the 3-D branch mesh remains visible all year round.",
+    "op": "add",
+    "file": "game:blocktypes/wood/leaves",
+    "path": "/byType/*-branchy/attributes/seasonTextures",
+    "value": {
+      "foliage": {
+        "winter": { "base": "survival:block/transparent" }
+      }
+    },
+    "allowMissingPath": true
+  }
+]
