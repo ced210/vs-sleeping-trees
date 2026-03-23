@@ -1,0 +1,11 @@
+{
+  "type": "content",
+  "modid": "barebranchy",
+  "name": "Bare Branchy Winter",
+  "description": "Makes the foliage on 'Branchy' leaf blocks completely invisible during Winter, leaving only the bare branch mesh and bark texture visible.",
+  "authors": [ "ced210" ],
+  "version": "1.0.0",
+  "dependencies": {
+    "game": ">=1.18.0"
+  }
+}
